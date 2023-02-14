@@ -1,0 +1,7 @@
+name: AsnaBuild
+version: '${project.version}'
+main: at.asna.asnabuild.Main
+api-version: 1.19
+authors: [ Asna, Dante ]
+description: private system
+website: https://asnacode.de/
