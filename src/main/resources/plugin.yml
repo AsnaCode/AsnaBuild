@@ -5,3 +5,9 @@ api-version: 1.19
 authors: [ Asna, Dante ]
 description: private system
 website: https://asnacode.de/
+commands:
+  setspawn:
+    permission: system.setspawn
+    usage: /setspawn
+  spawn:
+    usage: /spawn
