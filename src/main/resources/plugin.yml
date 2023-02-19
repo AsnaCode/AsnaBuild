@@ -7,7 +7,61 @@ description: private system
 website: https://asnacode.de/
 commands:
   setspawn:
-    permission: system.setspawn
-    usage: /setspawn
   spawn:
-    usage: /spawn
+    aliases: [l, lobby, hub]
+  wartungen:
+  gamemode:
+    aliases: [gm]
+  fly:
+    aliases: [fliegen]
+  clearchat:
+    aliases: [cc]
+  teleport:
+    aliases: [tp]
+  teleporthere:
+    aliases: [tph, tphere]
+  heal:
+  food:
+    aliases: [feed]
+  invsee:
+  skull:
+    aliases: [kopf, head]
+  giveaway:
+  hilfe:
+  setwarp:
+  warps:
+    aliases: [warp]
+  money:
+  addmoney:
+  removemoney:
+  daily:
+  enderchest:
+    aliases: [ec]
+  broadcast:
+    aliases: [bc, rundruf]
+  social:
+  msg:
+    aliases: [r]
+  sethome:
+  home:
+  homes:
+  delhome:
+  pay:
+    aliases: [überweisen]
+  craft:
+    aliases: [workbench, crafting]
+  anvil:
+  day:
+    aliases: [tag]
+  night:
+    aliases: [nacht]
+  shop:
+  vanish:
+    aliases: [v]
+  kick:
+  ban:
+  unban:
+  rang:
+    aliases: [rank, upgraderank, upgraderang]
+  setmoney:
+  job:

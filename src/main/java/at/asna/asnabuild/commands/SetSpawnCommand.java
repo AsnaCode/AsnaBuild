@@ -1,7 +1,6 @@
 package at.asna.asnabuild.commands;
 
 import at.asna.asnabuild.Main;
-import at.asna.asnabuild.api.coins.CoinsAPI;
 import at.asna.asnabuild.manager.LocationManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

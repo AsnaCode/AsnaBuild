@@ -1,6 +1,7 @@
 package at.asna.asnabuild.commands;
 
 import at.asna.asnabuild.Main;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -30,6 +31,12 @@ public class WartungenCommand implements CommandExecutor {
                     } else if (Main.getInstance().getConfig().getBoolean("Wartungen") == false){
                         Main.getInstance().getConfig().set("Wartungen", true);
                         Main.getInstance().saveConfig();
+
+                        for (Player online : Bukkit.getOnlinePlayers()){
+                            if (!online.hasPermission("system.wartungen.bypass")){
+                                online.kickPlayer("§cWARTUNGEN");
+                            }
+                        }
                         p.sendMessage(Main.prefix + "§7Die §eWartungen §7wurden eingeschalten!");
                     }
                 }
@@ -37,6 +44,8 @@ public class WartungenCommand implements CommandExecutor {
                 p.sendMessage(Main.noperm);
             }
 
+        } else {
+            sender.sendMessage(Main.prefix + "§7Verwendung: §e/Wartungen <an/aus>");
         }
 
         return false;

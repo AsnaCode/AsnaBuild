@@ -13,16 +13,19 @@ public class WartungenListener implements Listener {
     public void OnLogin(PlayerLoginEvent e) {
         Player p = e.getPlayer();
         if (Main.getInstance().getConfig().getBoolean("Wartungen") == true &&
-                !p.hasPermission("system.wartungen.bypass"))
+                !p.hasPermission("system.wartungen.bypass")){
             e.disallow(null, "§cWARTUNGEN"
-                                    + "\n§7Wir sind in §eWartungen§7!"
-                                    + "\n§7Discord: §ehttps://discord.gg/XakZ4nUkpQ");
+                    + "\n§7Wir sind in §eWartungen§7!"
+                    + "\n§7Discord: §ehttps://discord.gg/XakZ4nUkpQ");
+        }
     }
 
     @EventHandler
     public void OnMotd(ServerListPingEvent e) {
         if (Main.getInstance().getConfig().getBoolean("Wartungen") == true) {
-            e.setMotd(Main.getInstance().getConfig().getString("Wartung-Motd"));
+            e.setMotd("§6AsnaCode§7.§6de §8» §71.19 §8- §71.19.3 \n§cWartungen");
+        } else {
+            e.setMotd("§6AsnaCode§7.§6de §8» §71.19 §8- §71.19.3 \n§aRelease -> HEUTE");
         }
     }
 }
