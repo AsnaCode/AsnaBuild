@@ -21,9 +21,9 @@ public class ClearChatCommand implements CommandExecutor {
                         online.sendMessage("   ");
 
                 }
-                Bukkit.broadcastMessage(Main.prefix + "§7Der Chat wurde von §e" + p.getDisplayName() + " §7geleert!");
+                Bukkit.broadcastMessage(Main.prefix + "§7Der Chat wurde von §a" + p.getDisplayName() + " §7geleert!");
             } else {
-                p.sendMessage(Main.prefix + "§7Verwendung: §e/ClearChat");
+                p.sendMessage(Main.prefix + "§7Verwendung: §a/ClearChat");
             }
         } else {
             p.sendMessage(Main.noperm);

@@ -31,7 +31,7 @@ public class InvseeCommand implements CommandExecutor {
                 p.sendMessage(Main.noperm);
             }
         } else {
-            p.sendMessage(Main.prefix + "§7Verwendung: §e/Invsee <name>");
+            p.sendMessage(Main.prefix + "§7Verwendung: §a/Invsee <name>");
         }
 
 

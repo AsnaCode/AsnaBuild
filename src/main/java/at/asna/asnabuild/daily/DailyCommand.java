@@ -20,14 +20,14 @@ public class DailyCommand implements CommandExecutor {
             Player p = (Player) sender;
             ItemStack i1 = new ItemStack(Material.PRISMARINE_SHARD);
             ItemMeta i1meta = i1.getItemMeta();
-            i1meta.setDisplayName("§8» §6Hol es dir ab");
+            i1meta.setDisplayName("§8» §fHol es dir ab");
             i1.setItemMeta(i1meta);
 
             ItemStack i4 = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
             ItemMeta i4meta = i4.getItemMeta();
             i4meta.setDisplayName(" ");
             i4.setItemMeta(i4meta);
-            Inventory inventory = Bukkit.createInventory(null, InventoryType.CHEST, "§8» §6Daily §8«");
+            Inventory inventory = Bukkit.createInventory(null, InventoryType.CHEST, "§8» §aDaily §8«");
             inventory.setItem(13, i1);
             inventory.setItem(0, i4);
             inventory.setItem(1, i4);

@@ -16,16 +16,16 @@ public class DelHomeCommand implements CommandExecutor {
 
         if (p.hasPermission("system.delhome")){
             if (args.length == 0){
-                p.sendMessage(Main.prefix + "§7Verwendung: §e/DelHome <name>");
+                p.sendMessage(Main.prefix + "§7Verwendung: §a/DelHome <name>");
             } else if (args.length == 1) {
                 if (HomesAPI.ifHomeExist(p, args[0])){
                     HomesAPI.removeHome(p, args[0]);
-                    p.sendMessage(Main.prefix + "§7Du hast erfolgreich dein Home §e" + args[0] + " §7gelöscht!");
+                    p.sendMessage(Main.prefix + "§7Du hast erfolgreich dein Home §a" + args[0] + " §7gelöscht!");
                 } else {
-                    p.sendMessage(Main.prefix + "§7Der Home §e" + args[0] + " §7existiert nicht!");
+                    p.sendMessage(Main.prefix + "§7Der Home §a" + args[0] + " §7existiert nicht!");
                 }
             } else {
-                p.sendMessage(Main.prefix + "§7Verwendung: §e/DelHome <name>");
+                p.sendMessage(Main.prefix + "§7Verwendung: §a/DelHome <name>");
             }
         } else {
             p.sendMessage(Main.noperm);

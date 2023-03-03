@@ -9,6 +9,7 @@ import at.asna.asnabuild.homes.HomeCommand;
 import at.asna.asnabuild.homes.HomesCommand;
 import at.asna.asnabuild.homes.SetHomeCommand;
 import at.asna.asnabuild.jobs.JobCommand;
+import at.asna.asnabuild.jobs.JobCompletion;
 import at.asna.asnabuild.listener.*;
 import at.asna.asnabuild.manager.LocationManager;
 import at.asna.asnabuild.moderation.*;
@@ -18,26 +19,43 @@ import at.asna.asnabuild.prefix.TeamChat;
 import at.asna.asnabuild.shop.ShopCommand;
 import at.asna.asnabuild.shop.ShopListener;
 import at.asna.asnabuild.tablist.TabListManager;
+import at.asna.asnabuild.verkaufen.VeraufCommand;
+import at.asna.asnabuild.verkaufen.VerkaufListener;
 import at.asna.asnabuild.warps.WarpGuiInteract;
 import at.asna.asnabuild.warps.WarpsCommand;
 import at.asna.asnabuild.warps.setWarpCommand;
+import com.sun.security.auth.UnixNumericGroupPrincipal;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import org.bukkit.Bukkit;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.UUID;
 
 public final class Main extends JavaPlugin {
 
     //STRINGS
-    public static String prefix = "§6AsnaCode§7.§6de §8» §7";
+    public static String prefix = "§aAsna§fCode §8» §7";
     public static String noperm = prefix + "§cDafür hast du keine Rechte!";
 
-    public static String console = prefix + "§cDafür musst du ein Spieler sein!";
-    public static String notonline = prefix + "§7Dieser §eSpieler §7ist nicht online!";
+    public static String console = prefix + "§cDafür musst du ein §aSpieler sein!";
+    public static String notonline = prefix + "§7Dieser §aSpieler §7ist nicht online!";
+
+    //DISCORD
+
 
     private static CoinsAPI coinsAPI;
+    public static JDA jda;
 
 
     //INSTANCE
@@ -63,6 +81,7 @@ public final class Main extends JavaPlugin {
         //MANAGER
         LocationManager.setup();
         HomesAPI.loadHomes();
+        JobCompletion.setJobCompletion(this);
 
         //LISTENER
         PluginManager pm = Bukkit.getPluginManager();
@@ -78,6 +97,10 @@ public final class Main extends JavaPlugin {
         pm.registerEvents(new AntiPLuginListener(), this);
         pm.registerEvents(new ShopListener(), this);
         pm.registerEvents(new TeamChat(), this);
+        pm.registerEvents(new JobCompletion(), this);
+        pm.registerEvents(new MuteChatListener(), this);
+        pm.registerEvents(new VerkaufListener(), this);
+        pm.registerEvents(new ChatListener(), this);
 
 
 
@@ -110,6 +133,22 @@ public final class Main extends JavaPlugin {
         this.getCommand("night").setExecutor(new NightCommand());
         this.getCommand("shop").setExecutor(new ShopCommand());
         this.getCommand("vanish").setExecutor(new VanishCommand());
+        this.getCommand("uuid").setExecutor(new UniqueIDCommand());
+        this.getCommand("mutechat").setExecutor(new MuteChatCommand());
+        this.getCommand("sign").setExecutor(new SignCommand());
+        this.getCommand("rename").setExecutor(new RenameCommand());
+        this.getCommand("ip").setExecutor(new IpCommand());
+        this.getCommand("tpa").setExecutor(new TpaCommand());
+        this.getCommand("sun").setExecutor(new SunCommand());
+        this.getCommand("rain").setExecutor(new RainCommand());
+        this.getCommand("entchant").setExecutor(new EntchantCommand());
+        this.getCommand("repair").setExecutor(new RepairCommand());
+        this.getCommand("verkaufen").setExecutor(new VeraufCommand());
+        this.getCommand("ping").setExecutor(new PingCommand());
+        this.getCommand("pchatclear").setExecutor(new PClearChatCommand());
+        this.getCommand("nick").setExecutor(new NickCommand());
+        this.getCommand("bug").setExecutor(new BugCommand());
+        this.getCommand("report").setExecutor(new ReportCommand());
 
         //MONEY
         this.getCommand("money").setExecutor(new MoneyCommand());
@@ -132,23 +171,64 @@ public final class Main extends JavaPlugin {
         this.getCommand("ban").setExecutor(new BanCommand());
         this.getCommand("unban").setExecutor(new UnBanCommand());
         this.getCommand("rang").setExecutor(new RangCommand());
+        this.getCommand("tempban").setExecutor(new TempBanCommand());
 
 
 
         //CONFIG
         if (!(new File(getDataFolder(), "config.yml")).exists())
             saveResource("config.yml", false);
+
+        //DISCORD
+        try {
+            jda = JDABuilder.createDefault(getConfig().getString("TOKEN"))
+                    .setStatus(OnlineStatus.DO_NOT_DISTURB)
+                    .setActivity(Activity.playing("Powered by AsnaCode.de"))
+                    .build().awaitReady();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        sendStartEmbed();
+
+        //AUTOMESSAGE
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                Bukkit.broadcastMessage(Main.prefix + "§7Reporte uns Bugs mit §a/Bug <text>");
+            }
+        }.runTaskTimerAsynchronously(Main.getInstance(), 900*20, 900*20);
+
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                Bukkit.broadcastMessage(Main.prefix + "§7Join doch gerne unseren Discord mit &a/Social");
+            }
+        }.runTaskTimerAsynchronously(Main.getInstance(), 1800*20, 1800*20);
+
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                Bukkit.broadcastMessage(Main.prefix + "§7Solltest du Probleme haben melde dich doch gerne im Support!");
+            }
+        }.runTaskTimerAsynchronously(Main.getInstance(), 3600*20, 3600*20);
+
+
     }
+
+
+
 
     @Override
     public void onDisable() {
         //STOP
         Bukkit.getConsoleSender().sendMessage("§cAsnaBuild §7wurde gestopt!");
+        stopStartEmbed();
 
         //COINSAPI
 
         try {
             CoinsAPIImpl.saveConfiguration(this);
+            JobCompletion.saveConfiguration(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -167,5 +247,34 @@ public final class Main extends JavaPlugin {
     public static CoinsAPI getCoinsAPI() {
         return coinsAPI;
     }
+
+    public void sendStartEmbed(){
+        TextChannel channel = jda.getTextChannelById(getConfig().getString("CHANNEL_ID"));
+
+        EmbedBuilder embed = new EmbedBuilder();
+
+        embed.setColor(new Color(69, 255, 3));
+        embed.setTitle("Server Start");
+        embed.setDescription("Powered by Asnacode.de");
+
+        channel.sendMessageEmbeds(embed.build()).queue();
+    }
+
+    public void stopStartEmbed(){
+        TextChannel channel = jda.getTextChannelById(getConfig().getString("CHANNEL_ID"));
+
+        EmbedBuilder embed = new EmbedBuilder();
+
+        embed.setColor(new Color(255, 3, 24));
+        embed.setTitle("Server Stop");
+        embed.setDescription("Powered by Asnacode.de");
+
+        channel.sendMessageEmbeds(embed.build()).queue();
+    }
+
+    public static JDA getJda(){
+        return jda;
+    }
+
 
 }

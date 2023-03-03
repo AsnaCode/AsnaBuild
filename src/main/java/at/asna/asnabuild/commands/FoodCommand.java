@@ -19,15 +19,15 @@ public class FoodCommand implements CommandExecutor {
             if (p.hasPermission("system.food")){
                 if (args.length == 0){
                     p.setFoodLevel(20);
-                    p.sendMessage(Main.prefix + "§7Du hast nun kein §eHunger §7mehr!");
+                    p.sendMessage(Main.prefix + "§7Du hast nun kein §aHunger §7mehr!");
                 } else if (args.length == 1) {
                     if (p.hasPermission("system.heal.other")){
                         Player opfer = Bukkit.getPlayer(args[0]);
 
                         if (opfer != null){
                             opfer.setFoodLevel(20);
-                            opfer.sendMessage(Main.prefix + "§7Du hast nun kein §eHunger §7mehr!");
-                            p.sendMessage(Main.prefix + "§7Du hast den Spieler §e" + opfer.getDisplayName() + " §7hat nun kein §eHunger §7mehr!");
+                            opfer.sendMessage(Main.prefix + "§7Du hast nun kein §aHunger §7mehr!");
+                            p.sendMessage(Main.prefix + "§7Du hast den Spieler §a" + opfer.getDisplayName() + " §7hat nun kein §aHunger §7mehr!");
                         } else {
                             p.sendMessage(Main.notonline);
                         }
@@ -36,7 +36,7 @@ public class FoodCommand implements CommandExecutor {
                         p.sendMessage(Main.noperm);
                     }
                 } else {
-                    p.sendMessage(Main.prefix + "§7Verwendung: §e/Heal <name>");
+                    p.sendMessage(Main.prefix + "§7Verwendung: §a/Heal <name>");
                 }
             } else {
                 p.sendMessage(Main.noperm);

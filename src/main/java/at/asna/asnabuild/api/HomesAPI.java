@@ -19,7 +19,7 @@ public class HomesAPI {
 
 
     public static void removeHome(Player p, String name) {
-        File homes = new File(ordner, p.getName());
+        File homes = new File(ordner, String.valueOf(p.getUniqueId()));
         YamlConfiguration homeconfig = YamlConfiguration.loadConfiguration(homes);
         List<String> homelist = homeconfig.getStringList("homes");
         if (ifHomeExist(p, name)) {
@@ -38,7 +38,7 @@ public class HomesAPI {
     }
 
     public static void newHome(Player p, String name) {
-        File homes = new File(ordner, p.getName());
+        File homes = new File(ordner, String.valueOf(p.getUniqueId()));
         YamlConfiguration homeconfig = YamlConfiguration.loadConfiguration(homes);
         List<String> homelist = homeconfig.getStringList("homes");
         String world = p.getWorld().getName();
@@ -65,13 +65,13 @@ public class HomesAPI {
     }
 
     public static List<String> getListOfHomes(Player p) {
-        File homes = new File(ordner, p.getName());
+        File homes = new File(ordner, String.valueOf(p.getUniqueId()));
         YamlConfiguration homeconfig = YamlConfiguration.loadConfiguration(homes);
         return homeconfig.getStringList("homes");
     }
 
     public static Location getHome(Player p, String name) {
-        File homes = new File(ordner, p.getName());
+        File homes = new File(ordner, String.valueOf(p.getUniqueId()));
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(homes);
         String world = cfg.getString(name + ".world");
         double x = cfg.getDouble(name + ".x");
@@ -86,7 +86,7 @@ public class HomesAPI {
     }
 
     public static boolean ifHomeExist(Player p, String name) {
-        File homes = new File(ordner, p.getName());
+        File homes = new File(ordner, String.valueOf(p.getUniqueId()));
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(homes);
         return cfg.getStringList("homes").contains(name);
     }

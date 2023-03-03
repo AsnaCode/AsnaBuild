@@ -20,13 +20,14 @@ public class MSGCommand implements CommandExecutor {
                 msg = msg + args[i] + " ";
             if (opfer !=null){
                 //«»
-                p.sendMessage("§6MSG §8| §eDu §7-> §e" + opfer.getDisplayName() + " §8» §7" + msg.replace("&", "§"));
-                opfer.sendMessage("§6MSG §8| §e" + p.getDisplayName() + " §7-> §eDir §8» §7" + msg.replace("&", "§"));
+                //&8»&6VERKAUF&8«
+                p.sendMessage("§fM§aS§fG §8| §aDu §7-> §a" + opfer.getDisplayName() + " §8» §7" + msg.replace("&", "§"));
+                opfer.sendMessage("§fM§aS§fG §8| §a" + p.getDisplayName() + " §7-> §aDir §8» §7" + msg.replace("&", "§"));
             } else {
                 p.sendMessage(Main.notonline);
             }
         } else {
-            p.sendMessage(Main.prefix + "§7Verwendung: §e/MSG <name> <nachricht>");
+            p.sendMessage(Main.prefix + "§7Verwendung: §a/MSG <name> <nachricht>");
         }
 
 

@@ -16,25 +16,25 @@ public class KickCommand implements CommandExecutor {
 
         if (p.hasPermission("system.kick")){
             if (args.length == 0){
-                p.sendMessage(Main.prefix + "§7Verwendung: §e/Kick <name> <reason>");
+                p.sendMessage(Main.prefix + "§7Verwendung: §a/Kick <name> <reason>");
             } else if (args.length == 1) {
-                p.sendMessage(Main.prefix + "§7Verwendung: §e/Kick <name> <reason>");
-            } else if (args.length == 2) {
+                p.sendMessage(Main.prefix + "§7Verwendung: §a/Kick <name> <reason>");
+            } else if (args.length >= 2) {
                 Player opfer = Bukkit.getPlayer(args[0]);
                 if (opfer.hasPermission("system.kick.bypass")){
-                    p.sendMessage(Main.prefix + "§7Du kannst keine §eTeamler §7kicken!");
+                    p.sendMessage(Main.prefix + "§7Du kannst keine §aTeamler §7kicken!");
                 } else {
                     String msg = "";
                     for (int i = 1; i < args.length; i++)
                         msg = msg + args[i] + " ";
                     //«»
-                    opfer.kickPlayer(msg + " §8» §7Von §e" + p.getDisplayName());
-                    p.sendMessage(Main.prefix + "§7Du hast den Spieler §e" + opfer.getDisplayName() + " §7erfolgreich gekickt!");
+                    opfer.kickPlayer(msg + " §8» §7Von §a" + p.getDisplayName());
+                    p.sendMessage(Main.prefix + "§7Du hast den Spieler §a" + opfer.getDisplayName() + " §7erfolgreich gekickt!");
                 }
 
 
             } else {
-                p.sendMessage(Main.prefix + "§7Verwendung: §e/Kick <name> <reason>");
+                p.sendMessage(Main.prefix + "§7Verwendung: §a/Kick <name> <reason>");
             }
         }
 

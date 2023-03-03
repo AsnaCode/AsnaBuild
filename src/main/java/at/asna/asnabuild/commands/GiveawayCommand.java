@@ -27,37 +27,37 @@ public class GiveawayCommand implements CommandExecutor {
                     if (timer.get() == 30) {
                         //Send Title
                         for (Player online : Bukkit.getOnlinePlayers()) {
-                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§e30 Sekunden!");
+                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§a30 Sekunden!");
                             online.playSound(online.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 2F, 1F);
                         }
                     } else if (timer.get() == 15) {
                         for (Player online : Bukkit.getOnlinePlayers()) {
-                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§e15 Sekunden");
+                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§715 Sekunden");
                             //«»
                         }
                     } else if (timer.get() == 10) {
                         for (Player online : Bukkit.getOnlinePlayers()) {
-                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§e10 Sekunden");
+                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§710 Sekunden");
                         }
                     } else if (timer.get() == 5) {
                         for (Player online : Bukkit.getOnlinePlayers()) {
-                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§e5 Sekunden");
+                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§75 Sekunden");
                         }
                     } else if (timer.get() == 4) {
                         for (Player online : Bukkit.getOnlinePlayers()) {
-                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§e4 Sekunden");
+                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§74 Sekunden");
                         }
                     } else if (timer.get() == 3) {
                         for (Player online : Bukkit.getOnlinePlayers()) {
-                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§e3 Sekunden");
+                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§73 Sekunden");
                         }
                     } else if (timer.get() == 2) {
                         for (Player online : Bukkit.getOnlinePlayers()) {
-                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§e2 Sekunden");
+                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§72 Sekunden");
                         }
                     } else if (timer.get() == 1) {
                         for (Player online : Bukkit.getOnlinePlayers()) {
-                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§e1 Sekunden");
+                            online.sendTitle("§8§l»§a§lGiveaway§8§l«", "§71 Sekunden");
                         }
                     }
                     if (timer.get() == 0) {
@@ -66,16 +66,16 @@ public class GiveawayCommand implements CommandExecutor {
 
 
                         for (Player online : Bukkit.getOnlinePlayers()) {
-                            online.sendTitle("§8§l»§a§lGewinner§8§l«", "§e" + randomPlayer.getDisplayName());
+                            online.sendTitle("§8§l»§a§lGewinner§8§l«", "§a" + randomPlayer.getDisplayName());
                             online.playSound(online.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 2F, 1F);
                         }
-                        Bukkit.broadcastMessage("§7§m----------§8[§eGiveaway§8]§7§m----------");
+                        Bukkit.broadcastMessage("§7§m----------§8[§aGive§faway§8]§7§m----------");
                         Bukkit.broadcastMessage("§7 ");
-                        Bukkit.broadcastMessage("§7Gewinner: §e" + randomPlayer.getDisplayName());
-                        Bukkit.broadcastMessage("§7Preis: §e" + item.getAmount() + "x " + item.getType().toString().toLowerCase().replace("_", " ").replace(".", " "));
-                        Bukkit.broadcastMessage("§7Ersteller: §e" + ((Player) sender).getDisplayName());
-                        Bukkit.broadcastMessage("§e ");
-                        Bukkit.broadcastMessage("§7§m----------§8[§eGiveaway§8]§7§m----------");
+                        Bukkit.broadcastMessage("§7Gewinner: §a" + randomPlayer.getDisplayName());
+                        Bukkit.broadcastMessage("§7Preis: §a" + item.getAmount() + "x " + item.getType().toString().toLowerCase().replace("_", " ").replace(".", " "));
+                        Bukkit.broadcastMessage("§7Ersteller: §a" + ((Player) sender).getDisplayName());
+                        Bukkit.broadcastMessage("§a ");
+                        Bukkit.broadcastMessage("§7§m----------§8[§aGive§faway§8]§7§m----------");
                     }
                     timer.getAndDecrement();
                 }, 0, 20);

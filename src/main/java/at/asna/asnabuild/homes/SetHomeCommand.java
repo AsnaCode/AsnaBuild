@@ -16,16 +16,16 @@ public class SetHomeCommand implements CommandExecutor {
 
         if (p.hasPermission("system.sethomes")){
             if (args.length == 0){
-                p.sendMessage(Main.prefix + "§7Verwendung: §e/SetHome <name>");
+                p.sendMessage(Main.prefix + "§7Verwendung: §a/SetHome <name>");
             } else if (args.length == 1) {
                 if (!HomesAPI.ifHomeExist(p, args[0])){
                     HomesAPI.newHome(p, args[0]);
-                    p.sendMessage(Main.prefix + "§7Du hast erfolgreich das Home §e" + args[0] + " §7gesetzt!");
+                    p.sendMessage(Main.prefix + "§7Du hast erfolgreich das Home §a" + args[0] + " §7gesetzt!");
                 } else {
-                    p.sendMessage(Main.prefix + "§7Der Home §e" + args[0] + " §7existiert bereits!");
+                    p.sendMessage(Main.prefix + "§7Der Home §a" + args[0] + " §7existiert bereits!");
                 }
             } else {
-                p.sendMessage(Main.prefix + "§7Verwendung: §e/SetHome <name>");
+                p.sendMessage(Main.prefix + "§7Verwendung: §a/SetHome <name>");
             }
 
         } else {

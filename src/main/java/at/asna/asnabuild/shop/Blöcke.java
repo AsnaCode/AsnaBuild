@@ -23,7 +23,7 @@ public class Blöcke implements InventoryHolder {
     private final Player player;
 
     public Blöcke(Player player) {
-        this.inventory = Bukkit.createInventory(this, 6 * 9, "§8| §cShop §7✗ §eItems §8|");
+        this.inventory = Bukkit.createInventory(this, 6 * 9, "§8| §aShop §7✗ §aItems §8|");
         this.player = player;
 
         ItemStack i1 = new ItemStack(Material.GRASS_BLOCK);
@@ -134,15 +134,71 @@ public class Blöcke implements InventoryHolder {
         j10meta.setLore(Collections.singletonList("§ePreis§7: §7100.000€"));
         j10.setItemMeta(j10meta);
 
+        ItemStack j11 = new ItemStack(Material.LAPIS_LAZULI);
+        ItemMeta j11meta = j11.getItemMeta();
+        j11.setAmount(32);
+        j11meta.setDisplayName("§8§l« §7§lLapiz §8§l»");
+        j11meta.setLore(Collections.singletonList("§ePreis§7: §7500€"));
+        j11.setItemMeta(j11meta);
+
+        ItemStack j12 = new ItemStack(Material.GOLD_INGOT);
+        ItemMeta j12meta = j12.getItemMeta();
+        j12.setAmount(16);
+        j12meta.setDisplayName("§8§l« §7§lGold §8§l»");
+        j12meta.setLore(Collections.singletonList("§ePreis§7: §7250€"));
+        j12.setItemMeta(j12meta);
+
+        ItemStack j13 = new ItemStack(Material.NETHERITE_INGOT);
+        ItemMeta j13meta = j13.getItemMeta();
+        j13.setAmount(1);
+        j13meta.setDisplayName("§8§l« §7§lNetherite §8§l»");
+        j13meta.setLore(Collections.singletonList("§ePreis§7: §71.100€"));
+        j13.setItemMeta(j13meta);
+
+        ItemStack j14 = new ItemStack(Material.COAL);
+        ItemMeta j14meta = j14.getItemMeta();
+        j14.setAmount(32);
+        j14meta.setDisplayName("§8§l« §7§lKohle §8§l»");
+        j14meta.setLore(Collections.singletonList("§ePreis§7: §7250€"));
+        j14.setItemMeta(j14meta);
+
+        ItemStack j15 = new ItemStack(Material.EMERALD);
+        ItemMeta j15meta = j15.getItemMeta();
+        j15.setAmount(16);
+        j15meta.setDisplayName("§8§l« §7§lEmerald §8§l»");
+        j15meta.setLore(Collections.singletonList("§ePreis§7: §7750€"));
+        j15.setItemMeta(j15meta);
+
+        ItemStack j16 = new ItemStack(Material.REDSTONE);
+        ItemMeta j16meta = j16.getItemMeta();
+        j16.setAmount(32);
+        j16meta.setDisplayName("§8§l« §7§lRedstone §8§l»");
+        j16meta.setLore(Collections.singletonList("§ePreis§7: §7250€"));
+        j16.setItemMeta(j16meta);
+
+        ItemStack j17 = new ItemStack(Material.COPPER_INGOT);
+        ItemMeta j17meta = j17.getItemMeta();
+        j17.setAmount(32);
+        j17meta.setDisplayName("§8§l« §7§lKupfer §8§l»");
+        j17meta.setLore(Collections.singletonList("§ePreis§7: §7250€"));
+        j17.setItemMeta(j17meta);
+
+        ItemStack j18 = new ItemStack(Material.QUARTZ);
+        ItemMeta j18meta = j18.getItemMeta();
+        j18.setAmount(32);
+        j18meta.setDisplayName("§8§l« §7§lQuartz §8§l»");
+        j18meta.setLore(Collections.singletonList("§ePreis§7: §7250€"));
+        j18.setItemMeta(j18meta);
+
 
 
 
 
         //SOON
-        ItemStack j11 = new ItemStack(Material.GRAY_DYE);
-        ItemMeta j11meta = j11.getItemMeta();
-        j11meta.setDisplayName("§8§l« §7§lSoon §8§l»");
-        j11.setItemMeta(j11meta);
+        ItemStack j22 = new ItemStack(Material.GRAY_DYE);
+        ItemMeta j22meta = j22.getItemMeta();
+        j22meta.setDisplayName("§8§l« §7§lSoon §8§l»");
+        j22.setItemMeta(j22meta);
 
 
         player.openInventory(inventory);
@@ -169,18 +225,18 @@ public class Blöcke implements InventoryHolder {
         inventory.setItem(27, i1);
         inventory.setItem(29, i7);
         inventory.setItem(30, j11);
-        inventory.setItem(31, j11);
-        inventory.setItem(32, j11);
-        inventory.setItem(33, j11);
-        inventory.setItem(34, j11);
+        inventory.setItem(31, j12);
+        inventory.setItem(32, j13);
+        inventory.setItem(33, j14);
+        inventory.setItem(34, j15);
         inventory.setItem(35, i7);
         inventory.setItem(36, i4);
         inventory.setItem(38, i7);
-        inventory.setItem(39, j11);
-        inventory.setItem(40, j11);
-        inventory.setItem(41, j11);
-        inventory.setItem(42, j11);
-        inventory.setItem(43, j11);
+        inventory.setItem(39, j16);
+        inventory.setItem(40, j17);
+        inventory.setItem(41, j18);
+        inventory.setItem(42, j22);
+        inventory.setItem(43, j22);
         inventory.setItem(44, i7);
 
 
@@ -214,7 +270,6 @@ public class Blöcke implements InventoryHolder {
                     ItemStack j1 = new ItemStack(Material.GRASS_BLOCK);
                     ItemMeta j1meta = j1.getItemMeta();
                     j1.setAmount(32);
-                    j1meta.setDisplayName("§8§l« §7§lGrass Block §8§l»");
                     j1.setItemMeta(j1meta);
 
                     int amount = 100;
@@ -235,7 +290,6 @@ public class Blöcke implements InventoryHolder {
                     ItemStack j2 = new ItemStack(Material.OAK_WOOD);
                     ItemMeta j2meta = j2.getItemMeta();
                     j2.setAmount(32);
-                    j2meta.setDisplayName("§8§l« §7§lEichen Holz §8§l»");
                     j2.setItemMeta(j2meta);
 
                     int amount = 100;
@@ -256,7 +310,6 @@ public class Blöcke implements InventoryHolder {
                     ItemStack j3 = new ItemStack(Material.SPRUCE_WOOD);
                     ItemMeta j3meta = j3.getItemMeta();
                     j3.setAmount(32);
-                    j3meta.setDisplayName("§8§l« §7§lFichten Holz §8§l»");
                     j3.setItemMeta(j3meta);
 
                     int amount = 100;
@@ -277,7 +330,6 @@ public class Blöcke implements InventoryHolder {
                     ItemStack j4 = new ItemStack(Material.OAK_LEAVES);
                     ItemMeta j4meta = j4.getItemMeta();
                     j4.setAmount(32);
-                    j4meta.setDisplayName("§8§l« §7§lEichen Blätter §8§l»");
                     j4.setItemMeta(j4meta);
 
                     int amount = 50;
@@ -298,7 +350,6 @@ public class Blöcke implements InventoryHolder {
                     ItemStack j5 = new ItemStack(Material.COBBLESTONE);
                     ItemMeta j5meta = j5.getItemMeta();
                     j5.setAmount(32);
-                    j5meta.setDisplayName("§8§l« §7§lBruchstein §8§l»");
                     j5.setItemMeta(j5meta);
 
                     int amount = 100;
@@ -319,7 +370,6 @@ public class Blöcke implements InventoryHolder {
                     ItemStack j6 = new ItemStack(Material.DIAMOND);
                     ItemMeta j6meta = j6.getItemMeta();
                     j6.setAmount(16);
-                    j6meta.setDisplayName("§8§l« §7§lDiamanten §8§l»");
                     j6.setItemMeta(j6meta);
 
                     int amount = 1000;
@@ -340,7 +390,6 @@ public class Blöcke implements InventoryHolder {
                     ItemStack j7 = new ItemStack(Material.IRON_INGOT);
                     ItemMeta j7meta = j7.getItemMeta();
                     j7.setAmount(16);
-                    j7meta.setDisplayName("§8§l« §7§lEisen §8§l»");
                     j7.setItemMeta(j7meta);
 
                     int amount = 500;
@@ -361,7 +410,6 @@ public class Blöcke implements InventoryHolder {
                     ItemStack j8 = new ItemStack(Material.DRAGON_EGG);
                     ItemMeta j8meta = j8.getItemMeta();
                     j8.setAmount(1);
-                    j8meta.setDisplayName("§8§l« §7§lDrachen Ei §8§l»");
                     j8.setItemMeta(j8meta);
 
                     int amount = 50000;
@@ -382,7 +430,6 @@ public class Blöcke implements InventoryHolder {
                     ItemStack j9 = new ItemStack(Material.BEACON);
                     ItemMeta j9meta = j9.getItemMeta();
                     j9.setAmount(1);
-                    j9meta.setDisplayName("§8§l« §7§lBeacon §8§l»");
                     j9.setItemMeta(j9meta);
 
                     int amount = 25000;
@@ -403,7 +450,6 @@ public class Blöcke implements InventoryHolder {
                     ItemStack j10 = new ItemStack(Material.SPAWNER);
                     ItemMeta j10meta = j10.getItemMeta();
                     j10.setAmount(1);
-                    j10meta.setDisplayName("§8§l« §7§lSpawner §8§l»");
                     j10.setItemMeta(j10meta);
 
                     int amount = 100000;
@@ -418,6 +464,169 @@ public class Blöcke implements InventoryHolder {
                 }
                 break;
             }
+            case 30:{
+                if (Main.getCoinsAPI().getCoins(player.getUniqueId()) >= 500){
+                    ItemStack j11 = new ItemStack(Material.LAPIS_LAZULI);
+                    ItemMeta j11meta = j11.getItemMeta();
+                    j11.setAmount(32);
+                    j11meta.setLore(Collections.singletonList("§ePreis§7: §7500€"));
+                    j11.setItemMeta(j11meta);
+
+                    int amount = 500;
+
+                    //TUEN
+                    Main.getCoinsAPI().removeMoney(player, amount);
+                    player.getInventory().addItem(j11);
+
+
+                } else {
+                    player.sendMessage(Main.prefix + "§7Du hast nicht genug Geld!");
+                }
+                break;
+            }
+            case 31:{
+                if (Main.getCoinsAPI().getCoins(player.getUniqueId()) >= 250){
+                    ItemStack j12 = new ItemStack(Material.GOLD_INGOT);
+                    ItemMeta j12meta = j12.getItemMeta();
+                    j12.setAmount(16);
+                    j12meta.setLore(Collections.singletonList("§ePreis§7: §7250€"));
+                    j12.setItemMeta(j12meta);
+
+                    int amount = 250;
+
+                    //TUEN
+                    Main.getCoinsAPI().removeMoney(player, amount);
+                    player.getInventory().addItem(j12);
+
+
+                } else {
+                    player.sendMessage(Main.prefix + "§7Du hast nicht genug Geld!");
+                }
+                break;
+            }
+            case 32:{
+                if (Main.getCoinsAPI().getCoins(player.getUniqueId()) >= 1100){
+                    ItemStack j13 = new ItemStack(Material.NETHERITE_INGOT);
+                    ItemMeta j13meta = j13.getItemMeta();
+                    j13.setAmount(1);
+                    j13meta.setLore(Collections.singletonList("§ePreis§7: §71.100€"));
+                    j13.setItemMeta(j13meta);
+
+                    int amount = 1100;
+
+                    //TUEN
+                    Main.getCoinsAPI().removeMoney(player, amount);
+                    player.getInventory().addItem(j13);
+
+
+                } else {
+                    player.sendMessage(Main.prefix + "§7Du hast nicht genug Geld!");
+                }
+                break;
+            }
+            case 33:{
+                if (Main.getCoinsAPI().getCoins(player.getUniqueId()) >= 250){
+                    ItemStack j14 = new ItemStack(Material.COAL);
+                    ItemMeta j14meta = j14.getItemMeta();
+                    j14.setAmount(32);
+                    j14meta.setLore(Collections.singletonList("§ePreis§7: §7250€"));
+                    j14.setItemMeta(j14meta);
+
+                    int amount = 250;
+
+                    //TUEN
+                    Main.getCoinsAPI().removeMoney(player, amount);
+                    player.getInventory().addItem(j14);
+
+
+                } else {
+                    player.sendMessage(Main.prefix + "§7Du hast nicht genug Geld!");
+                }
+                break;
+            }
+            case 34:{
+                if (Main.getCoinsAPI().getCoins(player.getUniqueId()) >= 750){
+                    ItemStack j15 = new ItemStack(Material.EMERALD);
+                    ItemMeta j15meta = j15.getItemMeta();
+                    j15.setAmount(16);
+                    j15meta.setLore(Collections.singletonList("§ePreis§7: §7750€"));
+                    j15.setItemMeta(j15meta);
+
+                    int amount = 750;
+
+                    //TUEN
+                    Main.getCoinsAPI().removeMoney(player, amount);
+                    player.getInventory().addItem(j15);
+
+
+                } else {
+                    player.sendMessage(Main.prefix + "§7Du hast nicht genug Geld!");
+                }
+                break;
+            }
+            case 39:{
+                if (Main.getCoinsAPI().getCoins(player.getUniqueId()) >= 250){
+                    ItemStack j16 = new ItemStack(Material.REDSTONE);
+                    ItemMeta j16meta = j16.getItemMeta();
+                    j16.setAmount(32);
+                    j16meta.setLore(Collections.singletonList("§ePreis§7: §7250€"));
+                    j16.setItemMeta(j16meta);
+
+                    int amount = 250;
+
+                    //TUEN
+                    Main.getCoinsAPI().removeMoney(player, amount);
+                    player.getInventory().addItem(j16);
+
+
+                } else {
+                    player.sendMessage(Main.prefix + "§7Du hast nicht genug Geld!");
+                }
+                break;
+            }
+            case 40:{
+                if (Main.getCoinsAPI().getCoins(player.getUniqueId()) >= 250){
+                    ItemStack j17 = new ItemStack(Material.COPPER_INGOT);
+                    ItemMeta j17meta = j17.getItemMeta();
+                    j17.setAmount(32);
+                    j17meta.setLore(Collections.singletonList("§ePreis§7: §7250€"));
+                    j17.setItemMeta(j17meta);
+
+                    int amount = 250;
+
+                    //TUEN
+                    Main.getCoinsAPI().removeMoney(player, amount);
+                    player.getInventory().addItem(j17);
+
+
+                } else {
+                    player.sendMessage(Main.prefix + "§7Du hast nicht genug Geld!");
+                }
+                break;
+            }
+            case 41:{
+                if (Main.getCoinsAPI().getCoins(player.getUniqueId()) >= 250){
+                    ItemStack j18 = new ItemStack(Material.QUARTZ);
+                    ItemMeta j18meta = j18.getItemMeta();
+                    j18.setAmount(32);
+                    j18meta.setLore(Collections.singletonList("§ePreis§7: §7250€"));
+                    j18.setItemMeta(j18meta);
+
+                    int amount = 250;
+
+                    //TUEN
+                    Main.getCoinsAPI().removeMoney(player, amount);
+                    player.getInventory().addItem(j18);
+
+
+                } else {
+                    player.sendMessage(Main.prefix + "§7Du hast nicht genug Geld!");
+                }
+                break;
+            }
+
+
+
 
 
         }

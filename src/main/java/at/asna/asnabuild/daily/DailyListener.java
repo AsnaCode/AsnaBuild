@@ -29,10 +29,10 @@ public class DailyListener implements Listener {
     public void OnClick01(InventoryClickEvent e) {
         final Player p = (Player)e.getWhoClicked();
         try {
-            if (e.getView().getTitle() == "§8» §6Daily §8«")
+            if (e.getView().getTitle() == "§8» §aDaily §8«")
                 try {
                     if (e.getCurrentItem().getType() == Material.PRISMARINE_SHARD &&
-                            e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§8» §6Hol es dir ab")) {
+                            e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§8» §fHol es dir ab")) {
                         int timeLeft = this.cooldownManager.getCooldown(p.getUniqueId());
                         if (timeLeft == 0) {
                             ItemStack i1 = new ItemStack(Material.DIAMOND);
@@ -44,7 +44,7 @@ public class DailyListener implements Listener {
                             int amount = 500;
 
                             Main.getCoinsAPI().addMoney(p, amount);
-                            p.sendMessage(Main.prefix + "§7Du hast deine §eTäglichen Belohungen §7abgeholt!");
+                            p.sendMessage(Main.prefix + "§7Du hast deine §aTäglichen Belohungen §7abgeholt!");
                             this.cooldownManager.setCooldown(p.getUniqueId(), 86400);
                             (new BukkitRunnable() {
                                 public void run() {
@@ -55,7 +55,7 @@ public class DailyListener implements Listener {
                                 }
                             }).runTaskTimer(this.plugin, 20L, 20L);
                         } else {
-                            p.sendMessage(Main.prefix + "§7Du musst noch §e" + TimeUnit.SECONDS.toHours(timeLeft) + " §eStunden §7warten!");
+                            p.sendMessage(Main.prefix + "§7Du musst noch §a" + TimeUnit.SECONDS.toHours(timeLeft) + " §aStunden §7warten!");
                         }
                     }
                     p.closeInventory();

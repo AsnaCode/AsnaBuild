@@ -21,7 +21,7 @@ public class Ränge implements InventoryHolder {
     private final Player player;
 
     public Ränge(Player player) {
-        this.inventory = Bukkit.createInventory(this, 6 * 9, "§8| §cShop §7✗ §eRänge §8|");
+        this.inventory = Bukkit.createInventory(this, 6 * 9, "§8| §aShop §7✗ §aRänge §8|");
         this.player = player;
 
         ItemStack i1 = new ItemStack(Material.GRASS_BLOCK);

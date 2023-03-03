@@ -46,15 +46,15 @@ public class AntiPLuginListener implements Listener {
         }
 
         if (m.equalsIgnoreCase("/help")){
-            p.sendMessage("§7§m----------§8[§eHilfe§8]§7§m----------");
+            p.sendMessage("§7§m----------§8[§aHilfe§8]§7§m----------");
             p.sendMessage("§7 ");
-            p.sendMessage("§e/plot auto §8» §eGeneriert dir ein Zufälliges Plot!");
-            p.sendMessage("§e/plot claim §8» §eHole dir ein Plot wo du drauf stehst!");
-            p.sendMessage("§e/plot trust §8» §eFüge einen Spieler zu deinem Plot hinzu!");
-            p.sendMessage("§e/plot remove §8» §eEntferne einen Spieler von deinem Plot!");
-            p.sendMessage("§e/plot delete §8» §eLösche dein Plot!");
-            p.sendMessage("§e ");
-            p.sendMessage("§7§m----------§8[§eHilfe§8]§7§m----------");
+            p.sendMessage("§a/plot auto §8» §aGeneriert dir ein Zufälliges Plot!");
+            p.sendMessage("§a/plot claim §8» §aHole dir ein Plot wo du drauf stehst!");
+            p.sendMessage("§a/plot trust §8» §aFüge einen Spieler zu deinem Plot hinzu!");
+            p.sendMessage("§a/plot remove §8» §aEntferne einen Spieler von deinem Plot!");
+            p.sendMessage("§a/plot delete §8» §aLösche dein Plot!");
+            p.sendMessage("§a ");
+            p.sendMessage("§7§m----------§8[§aHilfe§8]§7§m----------");
             e.setCancelled(true);
             if (p.hasPermission("system.plugins")){
                 e.setCancelled(false);
@@ -62,15 +62,15 @@ public class AntiPLuginListener implements Listener {
         }
 
         if (m.equalsIgnoreCase("bukkit:help")) {
-            p.sendMessage("§7§m----------§8[§eHilfe§8]§7§m----------");
+            p.sendMessage("§7§m----------§8[§aHilfe§8]§7§m----------");
             p.sendMessage("§7 ");
-            p.sendMessage("§e/plot auto §8» §eGeneriert dir ein Zufälliges Plot!");
-            p.sendMessage("§e/plot claim §8» §eHole dir ein Plot wo du drauf stehst!");
-            p.sendMessage("§e/plot trust §8» §eFüge einen Spieler zu deinem Plot hinzu!");
-            p.sendMessage("§e/plot remove §8» §eEntferne einen Spieler von deinem Plot!");
-            p.sendMessage("§e/plot delete §8» §eLösche dein Plot!");
-            p.sendMessage("§e ");
-            p.sendMessage("§7§m----------§8[§eHilfe§8]§7§m----------");
+            p.sendMessage("§a/plot auto §8» §aGeneriert dir ein Zufälliges Plot!");
+            p.sendMessage("§a/plot claim §8» §aHole dir ein Plot wo du drauf stehst!");
+            p.sendMessage("§a/plot trust §8» §aFüge einen Spieler zu deinem Plot hinzu!");
+            p.sendMessage("§a/plot remove §8» §aEntferne einen Spieler von deinem Plot!");
+            p.sendMessage("§a/plot delete §8» §aLösche dein Plot!");
+            p.sendMessage("§a ");
+            p.sendMessage("§7§m----------§8[§aHilfe§8]§7§m----------");
             e.setCancelled(true);
             if (p.hasPermission("system.plugins")){
                 e.setCancelled(false);
@@ -78,15 +78,15 @@ public class AntiPLuginListener implements Listener {
         }
 
         if (m.equalsIgnoreCase("bukkit:?")) {
-            p.sendMessage("§7§m----------§8[§eHilfe§8]§7§m----------");
+            p.sendMessage("§7§m----------§8[§aHilfe§8]§7§m----------");
             p.sendMessage("§7 ");
-            p.sendMessage("§e/plot auto §8» §eGeneriert dir ein Zufälliges Plot!");
-            p.sendMessage("§e/plot claim §8» §eHole dir ein Plot wo du drauf stehst!");
-            p.sendMessage("§e/plot trust §8» §eFüge einen Spieler zu deinem Plot hinzu!");
-            p.sendMessage("§e/plot remove §8» §eEntferne einen Spieler von deinem Plot!");
-            p.sendMessage("§e/plot delete §8» §eLösche dein Plot!");
-            p.sendMessage("§e ");
-            p.sendMessage("§7§m----------§8[§eHilfe§8]§7§m----------");
+            p.sendMessage("§a/plot auto §8» §aGeneriert dir ein Zufälliges Plot!");
+            p.sendMessage("§a/plot claim §8» §aHole dir ein Plot wo du drauf stehst!");
+            p.sendMessage("§a/plot trust §8» §aFüge einen Spieler zu deinem Plot hinzu!");
+            p.sendMessage("§a/plot remove §8» §aEntferne einen Spieler von deinem Plot!");
+            p.sendMessage("§a/plot delete §8» §aLösche dein Plot!");
+            p.sendMessage("§a ");
+            p.sendMessage("§7§m----------§8[§aHilfe§8]§7§m----------");
             e.setCancelled(true);
             if (p.hasPermission("system.plugins")){
                 e.setCancelled(false);
@@ -94,15 +94,15 @@ public class AntiPLuginListener implements Listener {
         }
 
         if (m.equalsIgnoreCase("?")) {
-            p.sendMessage("§7§m----------§8[§eHilfe§8]§7§m----------");
+            p.sendMessage("§7§m----------§8[§aHilfe§8]§7§m----------");
             p.sendMessage("§7 ");
-            p.sendMessage("§e/plot auto §8» §eGeneriert dir ein Zufälliges Plot!");
-            p.sendMessage("§e/plot claim §8» §eHole dir ein Plot wo du drauf stehst!");
-            p.sendMessage("§e/plot trust §8» §eFüge einen Spieler zu deinem Plot hinzu!");
-            p.sendMessage("§e/plot remove §8» §eEntferne einen Spieler von deinem Plot!");
-            p.sendMessage("§e/plot delete §8» §eLösche dein Plot!");
-            p.sendMessage("§e ");
-            p.sendMessage("§7§m----------§8[§eHilfe§8]§7§m----------");
+            p.sendMessage("§a/plot auto §8» §aGeneriert dir ein Zufälliges Plot!");
+            p.sendMessage("§a/plot claim §8» §aHole dir ein Plot wo du drauf stehst!");
+            p.sendMessage("§a/plot trust §8» §aFüge einen Spieler zu deinem Plot hinzu!");
+            p.sendMessage("§a/plot remove §8» §aEntferne einen Spieler von deinem Plot!");
+            p.sendMessage("§a/plot delete §8» §aLösche dein Plot!");
+            p.sendMessage("§a ");
+            p.sendMessage("§7§m----------§8[§aHilfe§8]§7§m----------");
             e.setCancelled(true);
             if (p.hasPermission("system.plugins")){
                 e.setCancelled(false);

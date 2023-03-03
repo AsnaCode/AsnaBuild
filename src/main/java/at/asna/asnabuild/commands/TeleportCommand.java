@@ -26,7 +26,7 @@ public class TeleportCommand implements CommandExecutor {
                     Player opfer = Bukkit.getPlayer(args[0]);
                     if (opfer != null) {
                         p.teleport(opfer.getLocation());
-                        p.sendMessage(Main.prefix + "§7Du hast dich zu dem Spieler §e" + opfer.getDisplayName() + " §7teleportiert!");
+                        p.sendMessage(Main.prefix + "§7Du hast dich zu dem Spieler §a" + opfer.getDisplayName() + " §7teleportiert!");
                     } else {
                         p.sendMessage(Main.notonline);
                     }
@@ -37,12 +37,12 @@ public class TeleportCommand implements CommandExecutor {
                     if (x < 3.0E7D || y < 3.0E7D || z < 3.0E7D || x > -3.0E7D || y > -3.0E7D || z > -3.0E7D) {
                         Location location = new Location(p.getWorld(), x, y, z);
                         p.teleport(location);
-                        p.sendMessage(Main.prefix + "§7Du wurdest zu §e" + location.toString() + " §7teleportiert!");
+                        p.sendMessage(Main.prefix + "§7Du wurdest zu §a" + location.toString() + " §7teleportiert!");
                     } else {
                         p.sendMessage(Main.prefix + "§cFalsche Daten!");
                     }
                 } else {
-                    p.sendMessage(Main.prefix + "§7Verwendung: §e/tp <name>");
+                    p.sendMessage(Main.prefix + "§7Verwendung: §a/tp <name>");
                 }
             }
         }

@@ -24,7 +24,7 @@ import java.util.Collections;
         private final Player player;
 
         public Rüstung(Player player) {
-            this.inventory = Bukkit.createInventory(this, 6 * 9, "§8| §cShop §7✗ §eRüstung §8|");
+            this.inventory = Bukkit.createInventory(this, 6 * 9, "§8| §aShop §7✗ §aRüstung §8|");
             this.player = player;
 
             ItemStack i1 = new ItemStack(Material.GRASS_BLOCK);

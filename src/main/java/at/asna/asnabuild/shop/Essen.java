@@ -19,7 +19,7 @@ public class Essen implements InventoryHolder {
     private final Player player;
 
     public Essen(Player player) {
-        this.inventory = Bukkit.createInventory(this, 6 * 9, "§8| §cShop §7✗ §eEssen §8|");
+        this.inventory = Bukkit.createInventory(this, 6 * 9, "§8| §aShop §7✗ §aEssen §8|");
         this.player = player;
 
         ItemStack i1 = new ItemStack(Material.GRASS_BLOCK);
@@ -208,7 +208,6 @@ public class Essen implements InventoryHolder {
                     ItemStack j1 = new ItemStack(Material.APPLE);
                     ItemMeta j1meta = j1.getItemMeta();
                     j1.setAmount(16);
-                    j1meta.setDisplayName("§8§l« §7§lÄpfel §8§l»");
                     j1meta.setLore(Collections.singletonList("§ePreis§7: §750€"));
                     j1.setItemMeta(j1meta);
 
@@ -230,7 +229,6 @@ public class Essen implements InventoryHolder {
                     ItemStack j2 = new ItemStack(Material.COOKED_BEEF);
                     ItemMeta j2meta = j2.getItemMeta();
                     j2.setAmount(16);
-                    j2meta.setDisplayName("§8§l« §7§lSteak §8§l»");
                     j2meta.setLore(Collections.singletonList("§ePreis§7: §750€"));
                     j2.setItemMeta(j2meta);
 
@@ -252,7 +250,6 @@ public class Essen implements InventoryHolder {
                     ItemStack j3 = new ItemStack(Material.COOKED_PORKCHOP);
                     ItemMeta j3meta = j3.getItemMeta();
                     j3.setAmount(16);
-                    j3meta.setDisplayName("§8§l« §7§lGebratenes Schwein §8§l»");
                     j3meta.setLore(Collections.singletonList("§ePreis§7: §750€"));
                     j3.setItemMeta(j3meta);
 
@@ -274,7 +271,6 @@ public class Essen implements InventoryHolder {
                     ItemStack j4 = new ItemStack(Material.COOKED_CHICKEN);
                     ItemMeta j4meta = j4.getItemMeta();
                     j4.setAmount(16);
-                    j4meta.setDisplayName("§8§l« §7§lGebratenes Huhn §8§l»");
                     j4meta.setLore(Collections.singletonList("§ePreis§7: §750€"));
                     j4.setItemMeta(j4meta);
 
@@ -296,7 +292,6 @@ public class Essen implements InventoryHolder {
                     ItemStack j5 = new ItemStack(Material.MELON_SLICE);
                     ItemMeta j5meta = j5.getItemMeta();
                     j5.setAmount(16);
-                    j5meta.setDisplayName("§8§l« §7§lMelonen §8§l»");
                     j5meta.setLore(Collections.singletonList("§ePreis§7: §750€"));
                     j5.setItemMeta(j5meta);
 
@@ -318,7 +313,6 @@ public class Essen implements InventoryHolder {
                     ItemStack j6 = new ItemStack(Material.SWEET_BERRIES);
                     ItemMeta j6meta = j6.getItemMeta();
                     j6.setAmount(16);
-                    j6meta.setDisplayName("§8§l« §7§lSüße Beeren §8§l»");
                     j6meta.setLore(Collections.singletonList("§ePreis§7: §750€"));
                     j6.setItemMeta(j6meta);
 
@@ -340,7 +334,6 @@ public class Essen implements InventoryHolder {
                     ItemStack j7 = new ItemStack(Material.COOKED_COD);
                     ItemMeta j7meta = j7.getItemMeta();
                     j7.setAmount(16);
-                    j7meta.setDisplayName("§8§l« §7§lGebratenes Fisch §8§l»");
                     j7meta.setLore(Collections.singletonList("§ePreis§7: §750€"));
                     j7.setItemMeta(j7meta);
 
@@ -362,7 +355,6 @@ public class Essen implements InventoryHolder {
                     ItemStack j8 = new ItemStack(Material.COOKIE);
                     ItemMeta j8meta = j8.getItemMeta();
                     j8.setAmount(16);
-                    j8meta.setDisplayName("§8§l« §7§lKekse §8§l»");
                     j8meta.setLore(Collections.singletonList("§ePreis§7: §750€"));
                     j8.setItemMeta(j8meta);
 
@@ -384,7 +376,6 @@ public class Essen implements InventoryHolder {
                     ItemStack j9 = new ItemStack(Material.GOLDEN_APPLE);
                     ItemMeta j9meta = j9.getItemMeta();
                     j9.setAmount(1);
-                    j9meta.setDisplayName("§8§l« §7§lGoldener Apfel §8§l»");
                     j9meta.setLore(Collections.singletonList("§ePreis§7: §7150€"));
                     j9.setItemMeta(j9meta);
 
@@ -406,7 +397,6 @@ public class Essen implements InventoryHolder {
                     ItemStack j10 = new ItemStack(Material.ENCHANTED_GOLDEN_APPLE);
                     ItemMeta j10meta = j10.getItemMeta();
                     j10.setAmount(1);
-                    j10meta.setDisplayName("§8§l« §7§lOP Gold Apfel §8§l»");
                     j10meta.setLore(Collections.singletonList("§ePreis§7: §7500€"));
                     j10.setItemMeta(j10meta);
 

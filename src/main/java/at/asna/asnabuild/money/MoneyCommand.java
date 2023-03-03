@@ -14,17 +14,17 @@ public class MoneyCommand implements CommandExecutor {
 
         Player p = (Player) sender;
         if (args.length == 0){
-            p.sendMessage(Main.prefix + "§7Du hast zurzeit §e" + Main.getCoinsAPI().getCoins(p.getUniqueId()) + "§e€");
+            p.sendMessage(Main.prefix + "§7Du hast zurzeit §a" + Main.getCoinsAPI().getCoins(p.getUniqueId()) + "§a€");
         } else if (args.length == 1){
             if (p.hasPermission("system.money.other")){
                 Player opfer = Bukkit.getPlayer(args[0]);
-                p.sendMessage(Main.prefix + "§7Der Spieler §e" + opfer.getDisplayName() + " §7hat §e" + Main.getCoinsAPI().getCoins(opfer.getUniqueId()) + "§e€");
+                p.sendMessage(Main.prefix + "§7Der Spieler §a" + opfer.getDisplayName() + " §7hat §a" + Main.getCoinsAPI().getCoins(opfer.getUniqueId()) + "§a€");
             } else {
                 p.sendMessage(Main.noperm);
             }
 
         } else {
-            p.sendMessage(Main.prefix + "§7Verwendung: §e/Money <name>");
+            p.sendMessage(Main.prefix + "§7Verwendung: §a/Money <name>");
         }
 
 

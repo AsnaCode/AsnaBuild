@@ -22,11 +22,11 @@ public class RemoveMoneyCommand implements CommandExecutor {
                     int amount = Integer.parseInt(args[1]);
 
                     if (Main.getCoinsAPI().getCoins(opfer.getUniqueId()) == 0) {
-                        p.sendMessage(Main.prefix + "§7Dieser Spieler hat bereits §e0€§7!");
+                        p.sendMessage(Main.prefix + "§7Dieser Spieler hat bereits §a0€§7!");
                     } else {
                         Main.getCoinsAPI().removeMoney(opfer, amount);
-                        p.sendMessage(Main.prefix + "§7Du hast dem Spieler §e" + opfer.getDisplayName() + " §7erfolgreich §e" + args[1] + "§e€ §7weggenommen!");
-                        opfer.sendMessage(Main.prefix + "§7Dir wurden §e" + args[1] + "§e€ §7weggenommen!");
+                        p.sendMessage(Main.prefix + "§7Du hast dem Spieler §a" + opfer.getDisplayName() + " §7erfolgreich §a" + args[1] + "§a€ §7weggenommen!");
+                        opfer.sendMessage(Main.prefix + "§7Dir wurden §a" + args[1] + "§a€ §7weggenommen!");
                     }
 
                 }

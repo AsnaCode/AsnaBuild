@@ -8,7 +8,7 @@ public class INteractListener implements Listener {
 
     @EventHandler
     public void onINteract(InventoryClickEvent e){
-        if (e.getView().getTitle() == "§8» §6Warps §8«"){
+        if (e.getView().getTitle() == "§8| §aWarps §7✗ §aTeleport §8|"){
             e.setCancelled(true);
         }
     }

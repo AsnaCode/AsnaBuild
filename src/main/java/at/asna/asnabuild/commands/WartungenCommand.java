@@ -19,25 +19,25 @@ public class WartungenCommand implements CommandExecutor {
             if (p.hasPermission("system.wartungen")){
                 if (args[0].equals("aus")){
                     if (Main.getInstance().getConfig().getBoolean("Wartungen") == false){
-                        p.sendMessage(Main.prefix + "§7Die §eWartungen §7sind bereits ausgeschalten!");
+                        p.sendMessage(Main.prefix + "§7Die §aWartungen §7sind bereits ausgeschalten!");
                     } else if (Main.getInstance().getConfig().getBoolean("Wartungen") == true){
                         Main.getInstance().getConfig().set("Wartungen", false);
                         Main.getInstance().saveConfig();
-                        p.sendMessage(Main.prefix + "§7Die §eWartungen §7wurden ausgeschalten!");
+                        p.sendMessage(Main.prefix + "§7Die §aWartungen §7wurden ausgeschalten!");
                     }
                 } else if (args[0].equals("an")) {
                     if (Main.getInstance().getConfig().getBoolean("Wartungen") == true){
-                        p.sendMessage(Main.prefix + "§7Die §eWartungen §7sind bereits eingeschalten!");
+                        p.sendMessage(Main.prefix + "§7Die §aWartungen §7sind bereits eingeschalten!");
                     } else if (Main.getInstance().getConfig().getBoolean("Wartungen") == false){
                         Main.getInstance().getConfig().set("Wartungen", true);
                         Main.getInstance().saveConfig();
 
                         for (Player online : Bukkit.getOnlinePlayers()){
                             if (!online.hasPermission("system.wartungen.bypass")){
-                                online.kickPlayer("§cWARTUNGEN");
+                                online.kickPlayer("§cWARTUNGEN\n§7Discord: §ahttps://discord.gg/gn5BU3xZAc");
                             }
                         }
-                        p.sendMessage(Main.prefix + "§7Die §eWartungen §7wurden eingeschalten!");
+                        p.sendMessage(Main.prefix + "§7Die §aWartungen §7wurden eingeschalten!");
                     }
                 }
             } else {
@@ -45,7 +45,7 @@ public class WartungenCommand implements CommandExecutor {
             }
 
         } else {
-            sender.sendMessage(Main.prefix + "§7Verwendung: §e/Wartungen <an/aus>");
+            sender.sendMessage(Main.prefix + "§7Verwendung: §a/Wartungen <an/aus>");
         }
 
         return false;

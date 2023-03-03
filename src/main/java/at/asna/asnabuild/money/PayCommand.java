@@ -22,12 +22,12 @@ public class PayCommand implements CommandExecutor {
                 if (Main.getCoinsAPI().getCoins(p.getUniqueId()) > 0) {
                     if (Main.getCoinsAPI().getCoins(p.getUniqueId()) > amount) {
                         Main.getCoinsAPI().sendMoney(p, opfer, amount);
-                        p.sendMessage(Main.prefix + "§7Du hast dem Spieler §e" + opfer.getDisplayName() + " §7erfolgreich §e" + args[1] + "§e€ §7gegeben!");
-                        opfer.sendMessage(Main.prefix + "§7Du hast §e" + args[1] + "§e€ §7von §e" + p.getDisplayName() + " §7bekommen!");
+                        p.sendMessage(Main.prefix + "§7Du hast dem Spieler §a" + opfer.getDisplayName() + " §7erfolgreich §a" + args[1] + "§a€ §7gegeben!");
+                        opfer.sendMessage(Main.prefix + "§7Du hast §a" + args[1] + "§a€ §7von §a" + p.getDisplayName() + " §7bekommen!");
                     }else {
                         p.sendMessage(Main.prefix + "§7Du hast nicht genug Geld!");}
                 } else {
-                    p.sendMessage(Main.prefix + "§7Du hast bereits §e0€§7!");
+                    p.sendMessage(Main.prefix + "§7Du hast bereits §a0€§7!");
 
                 }
 

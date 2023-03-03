@@ -16,7 +16,7 @@ public class SetSpawnCommand implements CommandExecutor {
                 if (args.length == 0) {
                     String spawn = "Spawn";
                     LocationManager.setLocation(p.getLocation(), spawn);
-                    p.sendMessage(Main.prefix + "§7Du hast erfolgreich den §eSpawn §7gesetzt!");
+                    p.sendMessage(Main.prefix + "§7Du hast erfolgreich den §aSpawn §7gesetzt!");
                 }
             } else {
                 p.sendMessage(Main.noperm);

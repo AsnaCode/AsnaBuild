@@ -20,7 +20,7 @@ public class WarpsCommand implements CommandExecutor {
 
         Player p = (Player) sender;
 
-        Inventory inventory = Bukkit.createInventory(null, InventoryType.CHEST, "§8» §6Warps §8«");
+        Inventory inventory = Bukkit.createInventory(null, InventoryType.CHEST, "§8| §aWarps §7✗ §aTeleport §8|");
 
         ItemStack i1 = new ItemStack(Material.GRASS_BLOCK);
         ItemMeta i1meta = i1.getItemMeta();

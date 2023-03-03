@@ -2,7 +2,7 @@ name: AsnaBuild
 version: '${project.version}'
 main: at.asna.asnabuild.Main
 api-version: 1.19
-authors: [ Asna, Dante ]
+authors: [ Asna ]
 description: private system
 website: https://asnacode.de/
 commands:
@@ -40,6 +40,7 @@ commands:
   broadcast:
     aliases: [bc, rundruf]
   social:
+    aliases: [discord, youtube, dc, yt, twitch, tw, sozial, updates]
   msg:
     aliases: [r]
   sethome:
@@ -65,3 +66,29 @@ commands:
     aliases: [rank, upgraderank, upgraderang]
   setmoney:
   job:
+  uuid:
+  tempban:
+  mutechat:
+  sign:
+  rename:
+  ip:
+    aliases: [adress, ip-adress]
+  tpa:
+    aliases: [tpaaccept]
+  sun:
+    aliases: [sonne]
+  rain:
+    aliases: [regen]
+  entchant:
+    aliases: [verzaubern]
+  repair:
+  verkaufen:
+    aliases: [sell]
+  ping:
+    aliases: [ms]
+  pchatclear:
+    aliases: [pcc]
+  nick:
+  bug:
+  report:
+    aliases: [melden, hacker]

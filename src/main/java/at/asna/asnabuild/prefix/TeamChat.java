@@ -20,7 +20,7 @@ public class TeamChat implements Listener {
                 if (team.hasPermission("system.teamchat")){
                     e.setCancelled(true);
                     //«»
-                    team.sendMessage("§eTEAMCHAT §8» §e" + p.getDisplayName() + " §8» §7" + msg.replaceAll("@team", "§7"));
+                    team.sendMessage("§aTEAM§fCHAT §8» §a" + p.getDisplayName() + " §8» §7" + msg.replaceAll("@team", "§7"));
                 }
             }
         }

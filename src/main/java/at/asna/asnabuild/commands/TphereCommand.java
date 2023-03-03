@@ -25,12 +25,12 @@ public class TphereCommand implements CommandExecutor {
                     Player opfer = Bukkit.getPlayer(args[0]);
                     if (opfer != null){
                         opfer.teleport(p.getLocation());
-                        p.sendMessage(Main.prefix + "§7Du hast den Spieler §e" + opfer.getDisplayName() + " §7zu dir teleportiert!");
+                        p.sendMessage(Main.prefix + "§7Du hast den Spieler §a" + opfer.getDisplayName() + " §7zu dir teleportiert!");
                     } else {
                         p.sendMessage(Main.notonline);
                     }
                 } else {
-                    p.sendMessage(Main.prefix + "§7Verwendung: §e/tphere <name>");
+                    p.sendMessage(Main.prefix + "§7Verwendung: §a/tphere <name>");
                 }
 
             } else {

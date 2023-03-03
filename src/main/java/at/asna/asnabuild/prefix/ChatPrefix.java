@@ -15,6 +15,8 @@ public class ChatPrefix implements Listener {
         //«»
         if (p.hasPermission("system.admin")){
             e.setFormat("§4Admin §8• §4" + p.getDisplayName() + " §8» §7" + m);
+        } else if (p.hasPermission("system.manager")) {
+            e.setFormat("§eManager §8• §e" + p.getDisplayName() + " §8» §7" + m);
         } else if (p.hasPermission("system.developer")) {
             e.setFormat("§bDeveloper §8• §b" + p.getDisplayName() + " §8» §7" + m);
         } else if (p.hasPermission("system.moderator")) {
@@ -30,7 +32,7 @@ public class ChatPrefix implements Listener {
         } else if (p.hasPermission("system.premium")) {
             e.setFormat("§6Premium §8• §6" + p.getDisplayName() + " §8» §7" + m);
         } else {
-            e.setFormat("§e" + p.getDisplayName() + " §8» §7" + m);
+            e.setFormat("§aSpieler §8• §a" + p.getDisplayName() + " §8» §7" + m);
         }
     }
 

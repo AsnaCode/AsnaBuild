@@ -15,11 +15,10 @@ public class DayCommand implements CommandExecutor {
         Player p = (Player) sender;
 
         if (p.hasPermission("system.time")){
-            for (Player online : Bukkit.getOnlinePlayers()){
-                online.setPlayerTime(3000L, false);
+                p.getWorld().setTime(3000L);
 
-            }
-            p.sendMessage(Main.prefix + "§7Es ist nun §eTag§7!");
+            p.sendMessage(Main.prefix + "§7Es ist nun §aTag§7!");
+
         }
 
         return false;

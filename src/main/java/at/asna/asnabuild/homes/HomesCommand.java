@@ -20,14 +20,14 @@ public class HomesCommand implements CommandExecutor {
         if (args.length == 0) {
             List<String> home = HomesAPI.getListOfHomes(p);
             if (home.isEmpty()) {
-                p.sendMessage("§7§m----------§8[§eHomes§8]§7§m----------");
+                p.sendMessage("§7§m----------§8[§aHomes§8]§7§m----------");
                 p.sendMessage("§7 ");
-                p.sendMessage("§eDu besitzt keine Homes!");
-                p.sendMessage("§e ");
-                p.sendMessage("§7§m----------§8[§eHomes§8]§7§m----------");
+                p.sendMessage("§7Du besitzt keine §aHomes§7!");
+                p.sendMessage("§a ");
+                p.sendMessage("§7§m----------§8[§aHomes§8]§7§m----------");
                 return true;
             }
-            p.sendMessage("§7§m----------§8[§eHomes§8]§7§m----------");
+            p.sendMessage("§7§m----------§8[§aHomes§8]§7§m----------");
             p.sendMessage("§7 ");
             List<String> str = new ArrayList<>();
             List<String> str2 = new ArrayList<>();
@@ -38,11 +38,11 @@ public class HomesCommand implements CommandExecutor {
                 str2.add(loc.getWorld().getName());
             }
             for (i = 0; i < home.size(); i++)
-                p.sendMessage("§7" + str.get(i) + " §8[§eWORLD§7: " + str2.get(i) + "§8]");
-            p.sendMessage("§7§m----------§8[§eHomes§8]§7§m----------");
+                p.sendMessage("§7" + str.get(i) + " §8[§aWORLD§7: " + str2.get(i) + "§8]");
+            p.sendMessage("§7§m----------§8[§aHomes§8]§7§m----------");
 
         } else {
-            p.sendMessage(Main.prefix + "§7Verwendung: §e/Homes");
+            p.sendMessage(Main.prefix + "§7Verwendung: §a/Homes");
         }
 
 

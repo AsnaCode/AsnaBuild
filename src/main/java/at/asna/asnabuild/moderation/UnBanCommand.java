@@ -17,18 +17,25 @@ public class UnBanCommand implements CommandExecutor {
 
         if (p.hasPermission("system.unban")){
             if (args.length == 0){
-                p.sendMessage(Main.prefix + "§7Verwendung: §e/Unban <name>");
+                p.sendMessage(Main.prefix + "§7Verwendung: §a/Unban <name>");
             } else if (args.length == 1) {
                 OfflinePlayer opfer = Bukkit.getOfflinePlayer(args[0]);
                 if (opfer.isBanned()){
                     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "pardon " + opfer.getName());
-                    p.sendMessage(Main.prefix + "§7Du hast den Spieler §e" + opfer.getName() + " §7entbannt!");
+
+                        for (Player teamler : Bukkit.getOnlinePlayers())
+                            if (teamler.hasPermission("system.team")){
+                                teamler.sendMessage("§7§m----------§8[§aUN§fBAN§8]§7§m----------");
+                                teamler.sendMessage("§7Spieler: §a" + opfer.getName());
+                                teamler.sendMessage("§7Von: §a" + p.getDisplayName());
+                                teamler.sendMessage("§7§m----------§8[§aUN§fBAN§8]§7§m----------");
+                            }
                 } else {
                     p.sendMessage(Main.prefix + "§7Dieser Spieler ist nicht gebannt!");
                 }
 
             } else {
-                p.sendMessage(Main.prefix + "§7Verwendung: §e/Unban <name>");
+                p.sendMessage(Main.prefix + "§7Verwendung: §a/Unban <name>");
             }
         } else {
             p.sendMessage(Main.noperm);

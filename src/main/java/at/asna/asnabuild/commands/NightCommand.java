@@ -15,10 +15,8 @@ public class NightCommand implements CommandExecutor {
         Player p = (Player) sender;
 
         if (p.hasPermission("system.time")){
-            for (Player online : Bukkit.getOnlinePlayers()){
-                online.setPlayerTime(13000L, false);
-            }
-            p.sendMessage(Main.prefix + "§7Es ist nun §eNacht§7!");
+            p.getWorld().setTime(13000L);
+            p.sendMessage(Main.prefix + "§7Es ist nun §aNacht§7!");
         }
 
 

@@ -19,10 +19,10 @@ public class FlyCommand implements CommandExecutor {
                 if (args.length == 0){
                     if (p.getAllowFlight()){
                         p.setAllowFlight(false);
-                        p.sendMessage(Main.prefix + "§7Du kannst nun nicht mehr §eFliegen§7!");
+                        p.sendMessage(Main.prefix + "§7Du kannst nun nicht mehr §aFliegen§7!");
                     } else {
                         p.setAllowFlight(true);
-                        p.sendMessage(Main.prefix + "§7Du kannst nun §eFliegen§7!");
+                        p.sendMessage(Main.prefix + "§7Du kannst nun §aFliegen§7!");
                     }
                 } else if (args.length == 1) {
                     if (p.hasPermission("system.fly.other")){
@@ -30,12 +30,12 @@ public class FlyCommand implements CommandExecutor {
                         if (opfer != null){
                             if (opfer.getAllowFlight()){
                                 opfer.setAllowFlight(false);
-                                opfer.sendMessage(Main.prefix + "§7Du kannst nun nicht mehr §eFliegen§7!");
-                                p.sendMessage(Main.prefix + "§7Der Spieler §e" + opfer.getDisplayName() + " §7kann nun nicht mehr §eFliegen§7!");
+                                opfer.sendMessage(Main.prefix + "§7Du kannst nun nicht mehr §aFliegen§7!");
+                                p.sendMessage(Main.prefix + "§7Der Spieler §a" + opfer.getDisplayName() + " §7kann nun nicht mehr §aFliegen§7!");
                             } else {
                                 opfer.setAllowFlight(true);
-                                opfer.sendMessage(Main.prefix + "§7Du kannst nun §eFliegen§7!");
-                                p.sendMessage(Main.prefix + "§7Der Spieler §e" + opfer.getDisplayName() + " §7kann nun §eFliegen§7!");
+                                opfer.sendMessage(Main.prefix + "§7Du kannst nun §aFliegen§7!");
+                                p.sendMessage(Main.prefix + "§7Der Spieler §a" + opfer.getDisplayName() + " §7kann nun §aFliegen§7!");
                             }
                         } else {
                             p.sendMessage(Main.notonline);
@@ -44,7 +44,7 @@ public class FlyCommand implements CommandExecutor {
                         p.sendMessage(Main.noperm);
                     }
                 } else if (args.length > 1) {
-                    p.sendMessage(Main.prefix + "§7Verwendung: §e/Fly <name>");
+                    p.sendMessage(Main.prefix + "§7Verwendung: §a/Fly <name>");
                 }
             } else {
                 p.sendMessage(Main.noperm);

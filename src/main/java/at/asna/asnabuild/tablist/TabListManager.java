@@ -8,7 +8,7 @@ import org.bukkit.scoreboard.Team;
 
 public class TabListManager {
     public void setPlayerList(Player player) {
-        player.setPlayerListHeaderFooter("          §8» §6AsnaCode§7.§6de §8«           \n    §7", "  §7\n          §7Made with §cLove §7by §eAsna §7and §eRelease          ");
+        player.setPlayerListHeaderFooter("          §8» §aAsna§fCode §8«           \n    §7", "  §7\n §7Online: §a" + Bukkit.getOnlinePlayers().size() + "\n          §7Made with §cLove §7by §aAsna §7and §aRelease          ");
     }
     //«»
 
@@ -18,35 +18,38 @@ public class TabListManager {
 
     public void setPlayerTeam(Player player) {
         Scoreboard scoreboard = player.getScoreboard();
-        Team spieler = scoreboard.getTeam("009spieler");
+        Team spieler = scoreboard.getTeam("010spieler");
         if (spieler == null)
-            spieler = scoreboard.registerNewTeam("009spieler");
-        Team premium = scoreboard.getTeam("008premium");
+            spieler = scoreboard.registerNewTeam("010spieler");
+        Team premium = scoreboard.getTeam("009premium");
         if (premium == null)
-            premium = scoreboard.registerNewTeam("008premium");
-        Team asna = scoreboard.getTeam("007asna");
+            premium = scoreboard.registerNewTeam("009premium");
+        Team asna = scoreboard.getTeam("008asna");
         if (asna == null)
-            asna = scoreboard.registerNewTeam("007asna");
-        Team creator = scoreboard.getTeam("006creator");
+            asna = scoreboard.registerNewTeam("008asna");
+        Team creator = scoreboard.getTeam("007creator");
         if (creator == null)
-            creator = scoreboard.registerNewTeam("006creator");
-        Team supporter = scoreboard.getTeam("005supporter");
+            creator = scoreboard.registerNewTeam("007creator");
+        Team supporter = scoreboard.getTeam("006supporter");
         if (supporter == null)
-            supporter = scoreboard.registerNewTeam("005supporter");
-        Team builder = scoreboard.getTeam("004builder");
+            supporter = scoreboard.registerNewTeam("006supporter");
+        Team builder = scoreboard.getTeam("005builder");
         if (builder == null)
-            builder = scoreboard.registerNewTeam("004builder");
-        Team moderator = scoreboard.getTeam("003moderator");
+            builder = scoreboard.registerNewTeam("005builder");
+        Team moderator = scoreboard.getTeam("004moderator");
         if (moderator == null)
-            moderator = scoreboard.registerNewTeam("003moderator");
-        Team developer = scoreboard.getTeam("002developer");
+            moderator = scoreboard.registerNewTeam("004moderator");
+        Team developer = scoreboard.getTeam("003developer");
         if (developer == null)
-            developer = scoreboard.registerNewTeam("002developer");
+            developer = scoreboard.registerNewTeam("003developer");
+        Team manager = scoreboard.getTeam("002manager");
+        if (manager == null)
+            manager = scoreboard.registerNewTeam("002manager");
         Team admin = scoreboard.getTeam("001admin");
         if (admin == null)
             admin = scoreboard.registerNewTeam("001admin");
-        spieler.setPrefix("§e");
-                spieler.setColor(ChatColor.YELLOW);
+        spieler.setPrefix("§aSpieler §8• §a");
+                spieler.setColor(ChatColor.GREEN);
         premium.setPrefix("§6Premium §8• §6");
                 premium.setColor(ChatColor.GOLD);
         asna.setPrefix("§fAsna §8• §f");
@@ -55,15 +58,23 @@ public class TabListManager {
                 creator.setColor(ChatColor.DARK_RED);
         supporter.setPrefix("§9Supporter §8• §9");
                 supporter.setColor(ChatColor.BLUE);
+        builder.setPrefix("§2Builder §8• §9");
+        builder.setColor(ChatColor.DARK_GREEN);
         moderator.setPrefix("§cModerator §8• §c");
                 moderator.setColor(ChatColor.RED);
         developer.setPrefix("§bDeveloper §8• §b");
                 developer.setColor(ChatColor.AQUA);
-        admin.setPrefix("§4Admin §8• §9");
+        manager.setPrefix("§eManager §8• §e");
+        manager.setColor(ChatColor.YELLOW);
+        admin.setPrefix("§4Admin §8• §4");
                 admin.setColor(ChatColor.DARK_RED);
         for (Player target : Bukkit.getOnlinePlayers()) {
             if (target.hasPermission("system.admin")) {
                 admin.addEntry(target.getName());
+                continue;
+            }
+            if (target.hasPermission("system.manager")) {
+                manager.addEntry(target.getName());
                 continue;
             }
             if (target.hasPermission("system.developer")) {

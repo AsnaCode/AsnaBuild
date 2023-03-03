@@ -12,14 +12,14 @@ public class SocialCommand implements CommandExecutor {
 
         Player p = (Player) sender;
         //«»
-        p.sendMessage("§7§m----------§8[§eSocial§8]§7§m----------");
+        p.sendMessage("§7§m----------§8[§aSocial§8]§7§m----------");
         p.sendMessage("§7 ");
-        p.sendMessage("§eTikTok §8» §eAsnaCode");
-        p.sendMessage("§eYouTube §8» §eAsnaCode");
-        p.sendMessage("§eDiscord §8» §egn5BU3xZAc");
-        p.sendMessage("§eTwitch §8» §eAsnaCode");
-        p.sendMessage("§e ");
-        p.sendMessage("§7§m----------§8[§eSocial§8]§7§m----------");
+        p.sendMessage("§aTikTok §8» §aAsnaCode");
+        p.sendMessage("§aYouTube §8» §aAsnaCode");
+        p.sendMessage("§aDiscord §8» §agn5BU3xZAc");
+        p.sendMessage("§aTwitch §8» §aAsnaCode");
+        p.sendMessage("§a ");
+        p.sendMessage("§7§m----------§8[§aSocial§8]§7§m----------");
 
 
         return false;

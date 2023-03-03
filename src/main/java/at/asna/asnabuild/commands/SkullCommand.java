@@ -24,12 +24,12 @@ public class SkullCommand implements CommandExecutor {
 
                     ItemStack j7 = new ItemStack(Material.PLAYER_HEAD);
                     SkullMeta j7meta = (SkullMeta) j7.getItemMeta();
-                    j7meta.setDisplayName("§7Kopf von §e" + args[0]);
+                    j7meta.setDisplayName("§7Kopf von §a" + args[0]);
                     j7meta.setOwner(args[0]);
                     j7.setItemMeta(j7meta);
 
                     p.getInventory().addItem(j7);
-                    p.sendMessage(Main.prefix + "§7Du hast den Kopf von §e" + args[0] + " §7bekommen!");
+                    p.sendMessage(Main.prefix + "§7Du hast den Kopf von §a" + args[0] + " §7bekommen!");
 
                 }
             }

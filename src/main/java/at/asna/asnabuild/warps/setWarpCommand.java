@@ -20,18 +20,18 @@ public class setWarpCommand implements CommandExecutor {
                 if (args[0].equals("farmwelt")){
                     String farmwelt = "Farmwelt";
                     LocationManager.setLocation(p.getLocation(), farmwelt);
-                    p.sendMessage(Main.prefix + "§7Du hast §eFarmwelt §7gesetzt!");
+                    p.sendMessage(Main.prefix + "§7Du hast §aFarmwelt §7gesetzt!");
                 } else if (args[0].equals("nether")) {
                     String farmwelt = "Nether";
                     LocationManager.setLocation(p.getLocation(), farmwelt);
-                    p.sendMessage(Main.prefix + "§7Du hast den §eNether §7gesetzt!");
+                    p.sendMessage(Main.prefix + "§7Du hast den §aNether §7gesetzt!");
                 } else if (args[0].equals("end")) {
                     String farmwelt = "End";
                     LocationManager.setLocation(p.getLocation(), farmwelt);
-                    p.sendMessage(Main.prefix + "§7Du hast den §eEnd §7gesetzt!");
+                    p.sendMessage(Main.prefix + "§7Du hast den §aEnd §7gesetzt!");
                 }
             } else {
-                p.sendMessage(Main.prefix + "§7Verwendung: §e/setWarp farmwelt|nether|end");
+                p.sendMessage(Main.prefix + "§7Verwendung: §a/setWarp farmwelt|nether|end");
             }
         }
 

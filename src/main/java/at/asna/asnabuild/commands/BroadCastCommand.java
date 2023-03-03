@@ -16,11 +16,11 @@ public class BroadCastCommand implements CommandExecutor {
                 String msg = " ";
                 for (int i = 0; i < args.length; i++)
                     msg = msg + args[i] + " ";
-                Bukkit.broadcastMessage("§7»§7§m-----------§8[§eBROADCAST§8]§7§m----------§7«");
+                Bukkit.broadcastMessage("§7»§7§m-----------§8[§aBROAD§fCAST§8]§7§m----------§7«");
                 Bukkit.broadcastMessage("§8 ");
                 Bukkit.broadcastMessage("§7» " + msg.replace("&", "§"));
                 Bukkit.broadcastMessage("§7 ");
-                Bukkit.broadcastMessage("§7»§7§m-----------§8[§eBROADCAST§8]§7§m----------§7«");
+                Bukkit.broadcastMessage("§7»§7§m-----------§8[§aBROAD§fCAST§8]§7§m----------§7«");
             }
         } else {
             commandSender.sendMessage(Main.noperm);
